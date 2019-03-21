@@ -24,7 +24,7 @@
  * @TITLE: GDPR Opt-out for Facebook for WooCommerce Plugin
  * @FOR_PLUGIN: Facebook for WooCommerce, https://woocommerce.com/products/facebook/
  * @DESCRIPTION: implement an opt-out functionality for Facebook Pixel used by the Facebook for WooCommerce plugin
- * @SOURCE AND DISCUSSION: https://qreuz.com
+ * @DOCUMENTATION AND DISCUSSION: https://qreuz.com
  * @AUTHOR: Qreuz GmbH
  * @VERSION: 1.0
  */	

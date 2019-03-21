@@ -24,7 +24,7 @@
  * @TITLE: Disable Facebook Pixel on Facebook for WooCommerce Plugin
  * @FOR_PLUGIN: Facebook for WooCommerce, https://woocommerce.com/products/facebook/
  * @DESCRIPTION: completely disables the Facebook Pixel on the Facebook for WooCommerce plugin
- * @SOURCE AND DISCUSSION: https://qreuz.com
+ * @DOCUMENTATION AND DISCUSSION: https://qreuz.com
  * @AUTHOR: Qreuz GmbH
  * @VERSION: 1.0
  */		
