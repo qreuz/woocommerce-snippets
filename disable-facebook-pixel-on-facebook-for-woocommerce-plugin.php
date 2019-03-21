@@ -23,8 +23,9 @@
  * QREUZ SNIPPET FOR WOOCOMMERCE
  * @TITLE: Disable Facebook Pixel on Facebook for WooCommerce Plugin
  * @FOR_PLUGIN: Facebook for WooCommerce, https://woocommerce.com/products/facebook/
- * @DESCRIPTION: disables the Facebook Pixel on the Facebook for WooCommerce plugin
- * @SOURCE: https://qreuz.com
+ * @DESCRIPTION: completely disables the Facebook Pixel on the Facebook for WooCommerce plugin
+ * @SOURCE AND DISCUSSION: https://qreuz.com
  * @AUTHOR: Qreuz GmbH
+ * @VERSION: 1.0
  */		
 add_filter('facebook_for_woocommerce_integration_pixel_enabled', '__return_false', 20);
