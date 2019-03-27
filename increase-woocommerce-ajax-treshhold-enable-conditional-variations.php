@@ -18,15 +18,18 @@
  *
  * COPY AND PASTE EVERYTHING BELOW THIS LINE TO YOUR FUNCTIONS.PHP **/
 
-
 /**
  * QREUZ SNIPPET FOR WOOCOMMERCE
- * @TITLE: Disable Facebook Pixel on Facebook for WooCommerce Plugin
- * @FOR_PLUGIN: Facebook for WooCommerce, https://woocommerce.com/products/facebook/
- * @DESCRIPTION: completely disables the Facebook Pixel on the Facebook for WooCommerce plugin
- * @DOCUMENTATION AND DISCUSSION: https://qreuz.com/snippets/disable-facebook-pixel-on-facebook-for-woocommerce-plugin/
+ * @TITLE: Increase WooCommerce AJAX Variation Treshhold (Enable Conditional Variations)
+ * @DESCRIPTION: increases the treshhold of variations to enable conditional display of variations if your product has many variations
+ * @DOCUMENTATION AND DISCUSSION: https://qreuz.com/snippets/increase-woocommerce-ajax-variation-treshhold-enable-conditional-variations/
  * @AUTHOR: Qreuz GmbH
  * @VERSION: 1.0
- */		
-
-add_filter('facebook_for_woocommerce_integration_pixel_enabled', '__return_false', 20);
+ */
+ 
+add_filter( 'woocommerce_ajax_variation_threshold', 'qreuz_ajax_variation_treshhold_modification', 10, 2 );
+	
+	function qreuz_ajax_variation_treshhold_modification( $threshold, $product ){
+	  $threshold = '999';
+	  return  $threshold;
+	}

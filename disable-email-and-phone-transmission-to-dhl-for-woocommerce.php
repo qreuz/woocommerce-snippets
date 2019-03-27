@@ -18,15 +18,33 @@
  *
  * COPY AND PASTE EVERYTHING BELOW THIS LINE TO YOUR FUNCTIONS.PHP **/
 
-
 /**
  * QREUZ SNIPPET FOR WOOCOMMERCE
- * @TITLE: Disable Facebook Pixel on Facebook for WooCommerce Plugin
- * @FOR_PLUGIN: Facebook for WooCommerce, https://woocommerce.com/products/facebook/
- * @DESCRIPTION: completely disables the Facebook Pixel on the Facebook for WooCommerce plugin
- * @DOCUMENTATION AND DISCUSSION: https://qreuz.com/snippets/disable-facebook-pixel-on-facebook-for-woocommerce-plugin/
+ * @TITLE: Disable Email and Phone Transmission to DHL for WooCommerce (Enable Customer Privacy)
+ * @FOR_PLUGIN: DHL for WooCommerce, https://wordpress.org/plugins/dhl-for-woocommerce/
+ * @DESCRIPTION: prevent transmission of customer email and phone by DHL for WooCommerce to DHL (required privacy)
+ * @DOCUMENTATION AND DISCUSSION: https://qreuz.com/snippets/disable-email-and-phone-transmission-to-dhl-for-woocommerce-enable-customer-privacy/
  * @AUTHOR: Qreuz GmbH
  * @VERSION: 1.0
- */		
-
-add_filter('facebook_for_woocommerce_integration_pixel_enabled', '__return_false', 20);
+ */	
+ 
+// do not transmit email when creating a label from DHL
+add_filter('pr_shipping_dhl_label_args', 'qreuz_remove_email_from_dhl_api', 10, 2);
+	
+	function qreuz_remove_email_from_dhl_api($args, $order_id) {
+		if(isset($args['shipping_address']['email'])){
+			unset($args['shipping_address']['email']);
+		}
+		return $args;
+	}
+	
+// do not transmit customer phone number when creating a label from DHL	
+add_filter('pr_shipping_dhl_label_args', 'qreuz_remove_phone_number_from_dhl_api', 10, 2);
+	
+	function qreuz_remove_phone_number_from_dhl_api($args, $order_id) {
+		if(isset($args['shipping_address']['phone'])){
+			unset($args['shipping_address']['phone']);
+		}
+		return $args;
+	}
+	

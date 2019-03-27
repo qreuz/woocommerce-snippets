@@ -18,15 +18,18 @@
  *
  * COPY AND PASTE EVERYTHING BELOW THIS LINE TO YOUR FUNCTIONS.PHP **/
 
-
 /**
  * QREUZ SNIPPET FOR WOOCOMMERCE
- * @TITLE: Disable Facebook Pixel on Facebook for WooCommerce Plugin
- * @FOR_PLUGIN: Facebook for WooCommerce, https://woocommerce.com/products/facebook/
- * @DESCRIPTION: completely disables the Facebook Pixel on the Facebook for WooCommerce plugin
- * @DOCUMENTATION AND DISCUSSION: https://qreuz.com/snippets/disable-facebook-pixel-on-facebook-for-woocommerce-plugin/
+ * @TITLE: Customize Woocommerce Cross-Sells Output
+ * @DESCRIPTION: modify output of cross-sell products on WooCommerce cart page
+ * @DOCUMENTATION AND DISCUSSION: https://qreuz.com/snippets/customize-woocommerce-cross-sells-output/
  * @AUTHOR: Qreuz GmbH
  * @VERSION: 1.0
- */		
-
-add_filter('facebook_for_woocommerce_integration_pixel_enabled', '__return_false', 20);
+ */	
+ 
+add_filter( 'woocommerce_cross_sells_total', 'qreuz_modify_cross_sells_count', 20 );
+	
+	function qreuz_modify_cross_sells_count( $columns ) {
+	 $cross_sells = 4;
+	 return $cross_sells; // define how many cross sell products shall max. be shown on the cart page
+	}
