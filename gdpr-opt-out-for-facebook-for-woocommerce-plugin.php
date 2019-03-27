@@ -52,7 +52,7 @@ add_filter('facebook_for_woocommerce_integration_pixel_enabled', 'qreuz_gdpr_fac
 add_action('wp_enqueue_scripts','qreuz_gdpr_facebook_opt_out_script',20);
 	
 	function qreuz_gdpr_facebook_opt_out_script() {
-		$qreuz_opt_out_script = '<script type=\'text/javascript\'>
+		$qreuz_opt_out_script = "<script type=\'text/javascript\'>
 									var fboptOutLink = document.getElementById(\"fb-opt-out\");
 									if(fboptOutLink) {
 										fboptOutLink.onclick = function() {
@@ -61,7 +61,7 @@ add_action('wp_enqueue_scripts','qreuz_gdpr_facebook_opt_out_script',20);
 										  document.cookie = cookieName+\"=\"+cookieValue+\"; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/; domain=.\" + location.hostname.replace(/^www\./i, \"\");
 										  alert(\"Facebook tracking has been disabled.\");
 										}}
-								</script>';
+								</script>";
 		wp_register_script('qreuz_gdpr_facebook_opt_out_script','');
 		wp_enqueue_script('qreuz_gdpr_facebook_opt_out_script');
 		wp_add_inline_script('qreuz_gdpr_facebook_opt_out_script', $qreuz_opt_out_script);

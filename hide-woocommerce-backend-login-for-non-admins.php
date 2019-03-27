@@ -17,20 +17,24 @@
  * Don't know what a child theme is? Read this post: https://qreuz.com/how-to-use-a-child-theme-on-wordpress-and-woocommerce/
  *
  * COPY AND PASTE EVERYTHING BELOW THIS LINE TO YOUR FUNCTIONS.PHP **/
- 
+
 /**
  * QREUZ SNIPPET FOR WOOCOMMERCE
- * @TITLE: Customize WooCommerce Upsells Output
- * @DESCRIPTION: modify output of upsell products on WooCommerce product pages
- * @DOCUMENTATION AND DISCUSSION: https://qreuz.com/snippets/customize-woocommerce-upsells-output/
+ * @TITLE: Hide WooCommerce Backend Login for Non-Admins
+ * @DESCRIPTION: hide the default Wordpress login page and prevent WooCommerce backend access for non-admins
+ * @DOCUMENTATION AND DISCUSSION: https://qreuz.com/snippets/hide-woocommerce-backend-login-for-non-admins/
  * @AUTHOR: Qreuz GmbH
  * @VERSION: 1.0
- */
- 
-add_filter( 'woocommerce_upsell_display_args', 'qreuz_modify_upsells_output', 20 );
-	
-	function qreuz_modify_upsells_output( $args ) {
-	 $args['posts_per_page'] = 4; // define how many upsell products shall be shown on the product pages
-	 $args['columns'] = 4; // define across how many columns the products shall be split
-	 return $args;
+ */	
+
+
+
+add_action( 'init', 'blockusers_init' );
+
+	function blockusers_init() {
+		if ( is_admin() && ! current_user_can( 'administrator' ) &&
+		! ( defined( 'DOING_AJAX' ) && DOING_AJAX ) ) {
+		wp_redirect( home_url() );
+		exit;
+		}
 	}
