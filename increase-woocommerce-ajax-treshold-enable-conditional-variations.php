@@ -20,16 +20,16 @@
 
 /**
  * QREUZ SNIPPET FOR WOOCOMMERCE
- * @TITLE: Increase WooCommerce AJAX Variation Treshhold (Enable Conditional Variations)
+ * @TITLE: Increase WooCommerce AJAX Variation Treshold (Enable Conditional Variations)
  * @DESCRIPTION: increases the treshhold of variations to enable conditional display of variations if your product has many variations
- * @DOCUMENTATION AND DISCUSSION: https://qreuz.com/snippets/increase-woocommerce-ajax-variation-treshhold-enable-conditional-variations/
+ * @DOCUMENTATION AND DISCUSSION: https://qreuz.com/snippets/increase-woocommerce-ajax-variation-treshold-enable-conditional-variations/
  * @AUTHOR: Qreuz GmbH
  * @VERSION: 1.0
  */
  
-add_filter( 'woocommerce_ajax_variation_threshold', 'qreuz_ajax_variation_treshhold_modification', 10, 2 );
+add_filter( 'woocommerce_ajax_variation_threshold', 'qreuz_ajax_variation_treshold_modification', 10, 2 );
 	
-	function qreuz_ajax_variation_treshhold_modification( $threshold, $product ){
+	function qreuz_ajax_variation_treshold_modification( $threshold, $product ){
 	  $threshold = '999';
 	  return  $threshold;
 	}
