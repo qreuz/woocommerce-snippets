@@ -47,12 +47,12 @@ add_filter( 'woocommerce_get_price_suffix', 'qreuz_price_suffix', 10, 4 );
 				$price = wc_get_price_excluding_tax($product);
 			}
 			
-			$free_shipping_amount = 25; // enter the amount an order needs to be eligible for free shipping
+			$free_shipping_treshold = 25; // enter the amount an order needs to be eligible for free shipping
 			
-			if ($price < $free_shipping_amount && $product->needs_shipping()){
+			if ($price < $free_shipping_treshold && $product->needs_shipping()){
 				$shipping = 'plus shipping'; // suffix for 'excl. shipping' scenario
 			}
-			elseif ($price >= $free_shipping_amount && $product->needs_shipping()){
+			elseif ($price >= $free_shipping_treshold && $product->needs_shipping()){
 				$shipping = 'free shipping'; // suffix for 'free shipping' scenario
 			}
 			else {
