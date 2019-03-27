@@ -35,7 +35,7 @@ add_filter( 'woocommerce_get_price_suffix', 'qreuz_price_suffix', 10, 4 );
 			$shipping_country = WC()->customer->get_shipping_country();
 			
 			// define list of countries in the European Union to apply VAT, replace them with your countries to apply VAT for (if applicable)
-			$eu_countries = array("BE","BG","CZ","DK","DE","EE","IE","EL","ES","FR","HR","IT","CY","LV","LT","LU","HU","MT","NL","AT","PL","PT","RO","SI","SK","FI","SE","UK");
+			$eu_countries = array('BE','BG','CZ','DK','DE','EE','IE','EL','ES','FR','HR','IT','CY','LV','LT','LU','HU','MT','NL','AT','PL','PT','RO','SI','SK','FI','SE','UK');
 			
 			if (in_array($shipping_country,$eu_countries) && $product->is_taxable()){
 				$vat = 'inc. 19% VAT. '; // the suffix to show if VAT is applied, replace with your VAT rate
@@ -60,7 +60,7 @@ add_filter( 'woocommerce_get_price_suffix', 'qreuz_price_suffix', 10, 4 );
 			
 			$suffix = $vat.$shipping;
 			
-			$suffix_output = '<small class="woocommerce-price-suffix">'. $suffix .'</small>';
+			$suffix_output = '<small class=\'woocommerce-price-suffix\'>'. $suffix .'</small>';
 			
 			return $suffix_output;
 		}
