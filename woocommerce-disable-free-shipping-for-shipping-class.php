@@ -21,7 +21,7 @@
  * QREUZ SNIPPET FOR WOOCOMMERCE / WORDPRESS
  * @TITLE: WooCommerce Disable Free Shipping for Shipping Class
  * @DESCRIPTION: disables free shipping and forces a paid shipping method if a product of a certain class is added to the cart
- * @DOCUMENTATION AND DISCUSSION: https://qreuz.com/
+ * @DOCUMENTATION AND DISCUSSION: https://qreuz.com/snippets/woocommerce-disable-free-shipping-for-shipping-class/
  * @AUTHOR: Qreuz GmbH
  * @VERSION: 1.0
  */	
