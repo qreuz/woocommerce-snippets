@@ -22,7 +22,7 @@
  * @TITLE: GDPR Opt-out for SendinBlue Wordpress Plugin
  * @FOR_PLUGIN: SendinBlue Subscribe Form And WP SMTP, https://wordpress.org/plugins/mailin/
  * @DESCRIPTION: implement an opt-out functionality for Sendinblue marmketing automation used by the SendinBlue Subscribe Form And WP SMTP plugin
- * @DOCUMENTATION AND DISCUSSION: https://qreuz.com/
+ * @DOCUMENTATION AND DISCUSSION: https://qreuz.com/snippets/gdpr-opt-out-for-sendinblue-wordpress-plugin/
  * @AUTHOR: Qreuz GmbH
  * @VERSION: 1.0
  */	
