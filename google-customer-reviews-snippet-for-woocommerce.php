@@ -28,7 +28,8 @@
  */	
  
 // this action will set the language for your GCR opt-in (and your GCR badge if you integrate it)
-// replace the lang code with your store's language; available languages can be found at https://support.google.com/merchants/answer/7106244
+// replace the lang code with your store´s language; available languages can be found at https://support.google.com/merchants/answer/7106244
+
 add_action( 'wp_enqueue_scripts', 'qreuz_google_customer_reviews_language', 20);
 	
 	function qreuz_google_customer_reviews_language() {
