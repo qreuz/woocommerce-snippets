@@ -49,8 +49,7 @@ add_action( 'woocommerce_thankyou', 'qreuz_google_customer_reviews_opt_in' );
 		
 		$order = new WC_Order($order_id);
 		
-		$qreuz_google_customer_reviews_opt_in_script = '<!-- BEGIN GCR Opt-in Module Code -->
-			
+		$qreuz_google_customer_reviews_opt_in_script = '			
 			<script src=\"https://apis.google.com/js/platform.js?onload=renderOptIn\" async defer></script>
 
 			<script>
@@ -69,8 +68,7 @@ add_action( 'woocommerce_thankyou', 'qreuz_google_customer_reviews_opt_in' );
 				});
 			  }
 			</script>
-			
-			<!-- END GCR Opt-in Module Code -->';
+			';
 			
 		wp_register_script('qreuz_google_customer_reviews_opt_in_script','','','','true');
 		wp_enqueue_script('qreuz_google_customer_reviews_opt_in_script');
