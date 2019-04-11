@@ -1,4 +1,4 @@
-<?
+ <?
 /**
  *
  * ██████╗ ██████╗ ███████╗██╗   ██╗███████╗
@@ -22,9 +22,9 @@
  * @TITLE: Google Customer Reviews Snippet for WooCommerce
  * @FOR: Google Customer Reviews, https://support.google.com/merchants/answer/7124319
  * @DESCRIPTION: implements the necessary snippets to WooCommerce for collecting Google Customer Reviews from customers after purchase
- * @DOCUMENTATION AND DISCUSSION: https://qreuz.com/
+ * @DOCUMENTATION AND DISCUSSION: https://qreuz.com/snippets/google-customer-reviews-snippet-for-woocommerce/
  * @AUTHOR: Qreuz GmbH
- * @VERSION: 1.0
+ * @VERSION: 1.1
  */	
  
 // this action will set the language for your GCR opt-in (and your GCR badge if you integrate it)
@@ -54,11 +54,9 @@ add_action( 'woocommerce_thankyou', 'qreuz_google_customer_reviews_opt_in' );
 		
 		$order = new WC_Order($order_id);
 		
-			?>
+		$qreuz_google_customer_reviews_opt_in_script = "<!-- BEGIN GCR Opt-in Module Code -->
 			
-			<!-- BEGIN GCR Opt-in Module Code -->
-			
-			<script src="https://apis.google.com/js/platform.js?onload=renderOptIn" async defer></script>
+			<script src=\"https://apis.google.com/js/platform.js?onload=renderOptIn\" async defer></script>
 
 			<script>
 			  window.renderOptIn = function() {
@@ -66,20 +64,23 @@ add_action( 'woocommerce_thankyou', 'qreuz_google_customer_reviews_opt_in' );
 				  window.gapi.surveyoptin.render(
 					{
 					  // REQUIRED FIELDS
-					  "merchant_id": YOUR_MERCHANT_ID_HERE, // place your merchant ID here, get it from your Merchant Center at https://merchants.google.com/mc/merchantdashboard
-					  "order_id": "<?php echo $order->get_order_number(); ?>",
-					  "email": "<?php echo $order->get_billing_email(); ?>",
-					  "delivery_country": "<?php echo $order->get_billing_country(); ?>",
-					  "estimated_delivery_date": "<?php echo date('Y-m-d',strtotime("+5 day", strtotime($order->get_date_created()))); ?>",  // replace '5 day' with the estimated delivery time of your orders
-					  "opt_in_style": "CENTER_DIALOG"
+					  \"merchant_id\": YOUR_MERCHANT_ID_HERE, // place your merchant ID here, get it from your Merchant Center at https://merchants.google.com/mc/merchantdashboard
+					  \"order_id\": \"". $order->get_order_number() ."\",
+					  \"email\": \"". $order->get_billing_email() ."\",
+					  \"delivery_country\": \"". $order->get_billing_country() ."\",
+					 \"estimated_delivery_date\": \"". date('Y-m-d',strtotime('+5 day', strtotime($order->get_date_created()))) ."\",  // replace '5 day' with the estimated delivery time of your orders
+					  \"opt_in_style\": \"CENTER_DIALOG\"
 					});
 				});
 			  }
 			</script>
 			
-			<!-- END GCR Opt-in Module Code -->
+			<!-- END GCR Opt-in Module Code -->";
 			
-			<?php
+		wp_register_script('qreuz_google_customer_reviews_opt_in_script','','','','true');
+		wp_enqueue_script('qreuz_google_customer_reviews_opt_in_script');
+		wp_add_inline_script('qreuz_google_customer_reviews_opt_in_script', $qreuz_google_customer_reviews_opt_in_script);
+			
 	return;
 	}
 
@@ -88,24 +89,26 @@ add_action( 'wp_enqueue_scripts', 'qreuz_google_customer_reviews_badge', 20);
 	
 	function qreuz_google_customer_reviews_badge() {
 
-		?>
-	
-			<script src="https://apis.google.com/js/platform.js?onload=renderBadge" async defer></script>
-
+		$qreuz_google_customer_reviews_badge_script = "
+			<script src=\"https://apis.google.com/js/platform.js?onload=renderBadge\" async defer></script>
 			<script>
 			  window.renderBadge = function() {
-				var ratingBadgeContainer = document.createElement("div");
+				var ratingBadgeContainer = document.createElement(\"div\");
 				document.body.appendChild(ratingBadgeContainer);
 				window.gapi.load('ratingbadge', function() {
 				  window.gapi.ratingbadge.render(ratingBadgeContainer, {
 					// REQUIRED
-					 "merchant_id": YOUR_MERCHANT_ID_HERE, // place your merchant ID here, get it from your Merchant Center at https://merchants.google.com/mc/merchantdashboard
+					 \"merchant_id\": YOUR_MERCHANT_ID_HERE, // place your merchant ID here, get it from your Merchant Center at https://merchants.google.com/mc/merchantdashboard
 					// OPTIONAL
-					"position": "BOTTOM_RIGHT" // find out more about positioning at https://support.google.com/merchants/answer/7105655
+					\"position\": \"BOTTOM_RIGHT\" // find out more about positioning at https://support.google.com/merchants/answer/7105655
 					});
 				});
 			  }
-			</script>
-		<?php
+			</script>";
+			
+		wp_register_script('qreuz_google_customer_reviews_badge_script','','','','true');
+		wp_enqueue_script('qreuz_google_customer_reviews_badge_script');
+		wp_add_inline_script('qreuz_google_customer_reviews_badge_script', $qreuz_google_customer_reviews_badge_script);
+		
 	return;
 	}
