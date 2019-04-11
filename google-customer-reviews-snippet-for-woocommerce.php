@@ -19,7 +19,7 @@
 
 /**
  * QREUZ SNIPPET FOR WOOCOMMERCE / WORDPRESS
- * @TITLE: Google Customer Reviews Opt-in Snippet for WooCommerce
+ * @TITLE: Google Customer Reviews Snippet for WooCommerce
  * @FOR: Google Customer Reviews, https://support.google.com/merchants/answer/7124319
  * @DESCRIPTION: implements the necessary snippets to WooCommerce for collecting Google Customer Reviews from customers after purchase
  * @DOCUMENTATION AND DISCUSSION: https://qreuz.com/
