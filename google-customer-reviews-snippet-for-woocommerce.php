@@ -1,4 +1,4 @@
- <?
+<?php
 /**
  *
  * ██████╗ ██████╗ ███████╗██╗   ██╗███████╗
@@ -27,19 +27,13 @@
  * @VERSION: 1.1
  */	
  
-// this action will set the language for your GCR opt-in (and your GCR badge if you integrate it)
-// replace the lang code with your store´s language; available languages can be found at https://support.google.com/merchants/answer/7106244
+/* this action will set the language for your GCR opt-in (and your GCR badge if you integrate it)
+replace the lang code with your store´s language; available languages can be found at https://support.google.com/merchants/answer/7106244 */
 
 add_action( 'wp_enqueue_scripts', 'qreuz_google_customer_reviews_language', 20);
 	
 	function qreuz_google_customer_reviews_language() {
-		$qreuz_customer_reviews_language_script = '<!-- BEGIN language code for Google Customer Reviews -->
-													<script>
-													  window.___gcfg = {
-														lang: \'en_US\'
-													  };
-													</script>
-													<!-- END language code for Google Customer Reviews -->';
+		$qreuz_customer_reviews_language_script = "<script>window.___gcfg = {lang: 'en_US'};</script>";
 		
 		wp_register_script('qreuz_customer_reviews_language_script','','','','true');
 		wp_enqueue_script('qreuz_customer_reviews_language_script');
