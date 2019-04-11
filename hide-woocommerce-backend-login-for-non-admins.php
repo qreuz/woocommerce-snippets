@@ -29,9 +29,9 @@
 
 
 
-add_action( 'init', 'blockusers_init' );
+add_action( 'init', 'qreuz_hide_admin_pages' );
 
-	function blockusers_init() {
+	function qreuz_hide_admin_pages() {
 		if ( is_admin() && ! current_user_can( 'administrator' ) &&
 		! ( defined( 'DOING_AJAX' ) && DOING_AJAX ) ) {
 		wp_redirect( home_url() );
