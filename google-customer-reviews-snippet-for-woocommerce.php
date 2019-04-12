@@ -33,7 +33,7 @@ replace the lang code with your store´s language; available languages can be fo
 add_action( 'wp_enqueue_scripts', 'qreuz_google_customer_reviews_language', 20);
 	
 	function qreuz_google_customer_reviews_language() {
-		$qreuz_customer_reviews_language_script = "<script>window.___gcfg = {lang: 'en_US'};</script>";
+		$qreuz_customer_reviews_language_script = '<script>window.___gcfg = {lang: \'en_US\'};</script>';
 		
 		wp_register_script('qreuz_customer_reviews_language_script','','','','true');
 		wp_enqueue_script('qreuz_customer_reviews_language_script');
