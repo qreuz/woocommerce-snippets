@@ -22,7 +22,7 @@
  * QREUZ SNIPPET FOR WOOCOMMERCE
  * @TITLE: Add schema.org Structured Data for WooCommerce
  * @DESCRIPTION: adds structured data according to schema.org to pages, posts, archives, and product pages
- * @DOCUMENTATION AND DISCUSSION: https://qreuz.com/
+ * @DOCUMENTATION AND DISCUSSION: https://qreuz.com/snippets/add-schema-org-structured-data-for-woocommerce/
  * @AUTHOR: Qreuz GmbH
  * @VERSION: 1.0
  */
