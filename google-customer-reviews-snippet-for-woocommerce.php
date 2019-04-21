@@ -24,7 +24,7 @@
  * @DESCRIPTION: implements the necessary snippets to WooCommerce for collecting Google Customer Reviews from customers after purchase
  * @DOCUMENTATION AND DISCUSSION: https://qreuz.com/snippets/google-customer-reviews-snippet-for-woocommerce/
  * @AUTHOR: Qreuz GmbH
- * @VERSION: 1.1
+ * @VERSION: 1.2
  */	
  
 /* this action will set the language for your GCR opt-in (and your GCR badge if you integrate it)
@@ -33,7 +33,7 @@ replace the lang code with your store´s language; available languages can be fo
 add_action( 'wp_enqueue_scripts', 'qreuz_google_customer_reviews_language', 20);
 	
 	function qreuz_google_customer_reviews_language() {
-		$qreuz_customer_reviews_language_script = '<script>window.___gcfg = {lang: \'en_US\'};</script>';
+		$qreuz_customer_reviews_language_script = 'window.___gcfg = {lang: \'en_US\'};';
 		
 		wp_register_script('qreuz_customer_reviews_language_script','','','','true');
 		wp_enqueue_script('qreuz_customer_reviews_language_script');
@@ -49,10 +49,11 @@ add_action( 'woocommerce_thankyou', 'qreuz_google_customer_reviews_opt_in' );
 		
 		$order = new WC_Order($order_id);
 		
+		$qreuz_google_customer_reviews_opt_in_script_js = '<script src=\"https://apis.google.com/js/platform.js?onload=renderOptIn\" async defer></script>';
+		
+		echo $qreuz_google_customer_reviews_opt_in_script_js;
+		
 		$qreuz_google_customer_reviews_opt_in_script = '			
-			<script src=\"https://apis.google.com/js/platform.js?onload=renderOptIn\" async defer></script>
-
-			<script>
 			  window.renderOptIn = function() {
 				window.gapi.load(\'surveyoptin\', function() {
 				  window.gapi.surveyoptin.render(
@@ -66,9 +67,7 @@ add_action( 'woocommerce_thankyou', 'qreuz_google_customer_reviews_opt_in' );
 					  \"opt_in_style\": \"CENTER_DIALOG\"
 					});
 				});
-			  }
-			</script>
-			';
+			  }';
 			
 		wp_register_script('qreuz_google_customer_reviews_opt_in_script','','','','true');
 		wp_enqueue_script('qreuz_google_customer_reviews_opt_in_script');
@@ -81,10 +80,10 @@ add_action( 'woocommerce_thankyou', 'qreuz_google_customer_reviews_opt_in' );
 add_action( 'wp_enqueue_scripts', 'qreuz_google_customer_reviews_badge', 20);
 	
 	function qreuz_google_customer_reviews_badge() {
-
+		$qreuz_google_customer_reviews_script = '<script src=\"https://apis.google.com/js/platform.js?onload=renderBadge\" async defer></script>';
+		echo $qreuz_google_customer_reviews_script;
+		
 		$qreuz_google_customer_reviews_badge_script = '
-			<script src=\"https://apis.google.com/js/platform.js?onload=renderBadge\" async defer></script>
-			<script>
 			  window.renderBadge = function() {
 				var ratingBadgeContainer = document.createElement(\"div\");
 				document.body.appendChild(ratingBadgeContainer);
@@ -96,12 +95,12 @@ add_action( 'wp_enqueue_scripts', 'qreuz_google_customer_reviews_badge', 20);
 					\"position\": \"BOTTOM_RIGHT\" // find out more about positioning at https://support.google.com/merchants/answer/7105655
 					});
 				});
-			  }
-			</script>';
+			  }';
 			
 		wp_register_script('qreuz_google_customer_reviews_badge_script','','','','true');
 		wp_enqueue_script('qreuz_google_customer_reviews_badge_script');
 		wp_add_inline_script('qreuz_google_customer_reviews_badge_script', $qreuz_google_customer_reviews_badge_script);
+		
 		
 	return;
 	}
