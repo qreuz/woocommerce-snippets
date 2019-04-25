@@ -105,6 +105,8 @@ class qreuz_structured_data {
 			}
 			
 			$content  = $this->qreuz_strip_text( get_post_meta( $post->ID, '_yoast_wpseo_metadesc', true )); // uses content from Yoast SEO's description field if available
+
+			if ( '' === $content ) $content = $this->qreuz_strip_text( get_post_meta( $post->ID, '_aioseop_description', true )); // uses content from All in One SEO's description field if available
 			
 			  if ( '' === $content ) {
 				$content  = $this->qreuz_strip_text( $post->post_excerpt );
