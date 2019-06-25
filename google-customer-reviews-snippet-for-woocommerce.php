@@ -44,7 +44,7 @@ function qreuzGoogleCustomerReviewsLanguage()
         wp_add_inline_script('qreuz_customer_reviews_language_script', $qreuz_customer_reviews_language_script);
     return;
 } 
-add_action('wp_enqueue_scripts', 'QreuzGoogleCustomerReviewsLanguage', 20);
+add_action('wp_enqueue_scripts', 'qreuzGoogleCustomerReviewsLanguage', 20);
 
 /**
  * Adds the Google Customer Reviews opt-in form to the checkout confirmation page
