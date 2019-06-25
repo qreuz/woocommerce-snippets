@@ -24,7 +24,7 @@
  * @DESCRIPTION: implements the necessary snippets to WooCommerce for collecting Google Customer Reviews from customers after purchase
  * @DOCUMENTATION AND DISCUSSION: https://qreuz.com/snippets/google-customer-reviews-snippet-for-woocommerce/
  * @AUTHOR: Qreuz GmbH
- * @VERSION: 1.2
+ * @VERSION: 1.3
  */	
  
 /* this action will set the language for your GCR opt-in (and your GCR badge if you integrate it)
