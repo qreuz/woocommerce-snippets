@@ -22,8 +22,8 @@
  * @TITLE Google Customer Reviews Snippet for WooCommerce
  * 
  * @AUTHOR      Qreuz GmbH <hello@qreuz.com>
- * @LICENSE     GPL v3 https://www.gnu.org/licenses/gpl-3.0
- * @VERSION     1.4
+ * @LICENSE     GNU GPL v3 https://www.gnu.org/licenses/gpl-3.0
+ * @VERSION     1.4.1
  * @DESCRIPTION Implements the necessary snippets to WooCommerce for collecting Google Customer Reviews from customers after purchase
  * @FOR         Google Customer Reviews, https://support.google.com/merchants/answer/7124319
  * @LINK        https://qreuz.com/snippets/google-customer-reviews-snippet-for-woocommerce/
