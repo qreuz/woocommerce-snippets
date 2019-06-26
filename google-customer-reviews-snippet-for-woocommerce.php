@@ -3,14 +3,14 @@
  *
  *  ██████╗ ██████╗ ███████╗██╗   ██╗███████╗
  * ██╔═══██╗██╔══██╗██╔════╝██║   ██║╚══███╔╝
- * ██║   ██║██████╔╝█████╗  ██║   ██║  ███╔╝ 
- * ██║▄▄ ██║██╔══██╗██╔══╝  ██║   ██║ ███╔╝  
+ * ██║   ██║██████╔╝█████╗  ██║   ██║  ███╔╝
+ * ██║▄▄ ██║██╔══██╗██╔══╝  ██║   ██║ ███╔╝
  * ╚██████╔╝██║  ██║███████╗╚██████╔╝███████╗
  *  ╚══▀▀═╝ ╚═╝  ╚═╝╚══════╝ ╚═════╝ ╚══════╝
  *
  * QREUZ SNIPPET FOR WOOCOMMERCE
  * This file is part of a collection of snippets to be used on your WooCommerce store.
- * !! Do not put this file in your Wordpress installation !!
+ * !! Do not put this file in your WordPress installation !!
  *
  * Copy/paste the code below and add it to the functions.php of your child theme.
  * Don't know what a child theme is? Read this post: https://qreuz.com/
