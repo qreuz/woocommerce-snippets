@@ -21,9 +21,9 @@
  * QREUZ SNIPPET FOR WOOCOMMERCE / WORDPRESS
  *
  * @TITLE       Add Custom Order Status to WooCommerce
- * @VERSION     1.0
+ * @VERSION     1.1
  * @DESCRIPTION Adds a custom order status to WooCommerce
- * @LINK        https://qreuz.com/snippets/
+ * @LINK        https://qreuz.com/snippets/add-custom-order-status-to-woocommerce/
  * @AUTHOR      Qreuz GmbH <hello@qreuz.com>
  * @LICENSE     GNU GPL v3 https://www.gnu.org/licenses/gpl-3.0
  */
