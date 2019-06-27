@@ -23,7 +23,7 @@
  * @TITLE       Reorder Tabs on WooCommerce Product Page
  * @VERSION     1.0
  * @DESCRIPTION Reorders the tabs on WooCommerce product pages
- * @LINK        https://qreuz.com/snippets/
+ * @LINK        https://qreuz.com/snippets/reorder-tabs-on-woocommerce-product-page/
  * @AUTHOR      Qreuz GmbH <hello@qreuz.com>
  * @LICENSE     GNU GPL v3 https://www.gnu.org/licenses/gpl-3.0
  */

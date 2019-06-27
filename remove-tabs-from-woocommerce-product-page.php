@@ -23,7 +23,7 @@
  * @TITLE       Remove Tabs from WooCommerce Product Page
  * @VERSION     1.0
  * @DESCRIPTION Removes tabs from WooCommerce product pages
- * @LINK        https://qreuz.com/snippets/
+ * @LINK        https://qreuz.com/snippets/remove-tabs-from-woocommerce-product-page/
  * @AUTHOR      Qreuz GmbH <hello@qreuz.com>
  * @LICENSE     GNU GPL v3 https://www.gnu.org/licenses/gpl-3.0
  */

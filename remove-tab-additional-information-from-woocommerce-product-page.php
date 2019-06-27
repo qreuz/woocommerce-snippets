@@ -23,7 +23,7 @@
  * @TITLE       Remove Tab Additional Information from WooCommerce Product Page
  * @VERSION     1.0
  * @DESCRIPTION Removes the tab 'Additional Information' from WooCommerce product pages
- * @LINK        https://qreuz.com/snippets/
+ * @LINK        https://qreuz.com/snippets/remove-tab-additional-information-from-woocommerce-product-page/
  * @AUTHOR      Qreuz GmbH <hello@qreuz.com>
  * @LICENSE     GNU GPL v3 https://www.gnu.org/licenses/gpl-3.0
  */
