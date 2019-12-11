@@ -53,29 +53,26 @@ function qreuz_google_customer_reviews_optin( $order_id ) {
 
 	$order = new WC_Order( $order_id );
 
-	$qreuz_google_customer_reviews_opt_in_script_js = '<script src="https://apis.google.com/js/platform.js?onload=renderOptIn" async defer></script>';
+	?>
+	<script src="https://apis.google.com/js/platform.js?onload=renderOptIn" async defer></script>
 
-	echo $qreuz_google_customer_reviews_opt_in_script_js;
-
-	$qreuz_google_customer_reviews_opt_in_script = '			
+	<script>			
 			  window.renderOptIn = function() {
-				window.gapi.load(\'surveyoptin\', function() {
+				window.gapi.load('surveyoptin', function() {
 				  window.gapi.surveyoptin.render(
 					{
 					  // REQUIRED FIELDS
 					  "merchant_id": YOUR_MERCHANT_ID_HERE, // place your merchant ID here, get it from your Merchant Center at https://merchants.google.com/mc/merchantdashboard
-					  "order_id": "' . $order->get_order_number() . '",
-					  "email": "' . $order->get_billing_email() . '",
-					  "delivery_country": "' . $order->get_billing_country() . '",
-					  "estimated_delivery_date": "' . date( 'Y-m-d', strtotime( '+5 day', strtotime( $order->get_date_created() ) ) ) . '",  // replace "5 day" with the estimated delivery time of your orders
+					  "order_id": "<?php echo esc_attr( $order->get_order_number() ); ?>",
+					  "email": "<?php echo esc_attr( $order->get_billing_email() ); ?>",
+					  "delivery_country": "<?php echo esc_attr( $order->get_billing_country() ); ?>",
+					  "estimated_delivery_date": "<?php echo esc_attr( date( 'Y-m-d', strtotime( '+5 day', strtotime( $order->get_date_created() ) ) ) ); ?>",  // replace "5 day" with the estimated delivery time of your orders
 					  "opt_in_style": "CENTER_DIALOG"
 					});
 				});
-			  }';
+			  }</script>
 
-	wp_register_script( 'qreuz_google_customer_reviews_opt_in_script', '', '', 'false', 'true' );
-	wp_enqueue_script( 'qreuz_google_customer_reviews_opt_in_script' );
-	wp_add_inline_script( 'qreuz_google_customer_reviews_opt_in_script', $qreuz_google_customer_reviews_opt_in_script );
+	<?php
 }
 add_action( 'woocommerce_thankyou', 'qreuz_google_customer_reviews_optin' );
 
