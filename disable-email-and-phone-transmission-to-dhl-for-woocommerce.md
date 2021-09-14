@@ -1,3 +1,4 @@
+```php
 <?php
 
 /**
@@ -47,4 +48,5 @@ add_filter('pr_shipping_dhl_label_args', 'qreuz_remove_phone_number_from_dhl_api
 		}
 		return $args;
 	}
+```
 	

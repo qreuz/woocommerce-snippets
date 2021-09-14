@@ -1,3 +1,4 @@
+```php
 <?php
 /**
  *
@@ -73,3 +74,4 @@ function qreuz_add_custom_order_status_to_order_statuses( $order_statuses ) {
 	return $new_order_statuses;
 }
 add_filter( 'wc_order_statuses', 'qreuz_add_custom_order_status_to_order_statuses' );
+```

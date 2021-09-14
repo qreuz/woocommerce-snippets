@@ -1,3 +1,4 @@
+```php
 <?php
 
 /**
@@ -67,3 +68,4 @@ add_action('wp_enqueue_scripts','qreuz_gdpr_facebook_opt_out_script',20);
 		wp_add_inline_script('qreuz_gdpr_facebook_opt_out_script', $qreuz_opt_out_script);
 		return;
 	}
+```

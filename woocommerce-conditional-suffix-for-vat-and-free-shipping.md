@@ -1,3 +1,4 @@
+```php
 <?php
 
 /**
@@ -68,3 +69,4 @@ add_filter( 'woocommerce_get_price_suffix', 'qreuz_price_suffix', 10, 4 );
 			return $price_display_suffix;
 		}
 	}
+```

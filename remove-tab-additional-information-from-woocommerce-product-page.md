@@ -1,3 +1,4 @@
+```php
 <?php
 /**
  *
@@ -20,22 +21,20 @@
 /**
  * QREUZ SNIPPET FOR WOOCOMMERCE / WORDPRESS
  *
- * @TITLE       Rename Tabs on WooCommerce Product Page
+ * @TITLE       Remove Tab Additional Information from WooCommerce Product Page
  * @VERSION     1.0
- * @DESCRIPTION Renames the tabs on WooCommerce product pages
- * @LINK        https://qreuz.com/snippets/rename-tabs-on-woocommerce-product-page/
+ * @DESCRIPTION Removes the tab 'Additional Information' from WooCommerce product pages
+ * @LINK        https://qreuz.com/snippets/remove-tab-additional-information-from-woocommerce-product-page/
  * @AUTHOR      Qreuz GmbH <hello@qreuz.com>
  * @LICENSE     GNU GPL v3 https://www.gnu.org/licenses/gpl-3.0
  */
 
 /**
- * This function will allow you to customize the names of the tabs on WooCommerce product pages.
+ * This function will remove the tab 'Additional Information' from WooCommerce product pages.
 **/
-function qreuz_rename_tabs_product_page( $tabs ) {
-    $tabs['description']['title'] = __( 'Description title' );		// Set your title for the description tab here
-	$tabs['reviews']['title'] = __( 'Ratings title' );				// Set your title for the reviews tab here
-	$tabs['additional_information']['title'] = __( 'Additional information title' );	// Set your title for the additional information tab here
-
+function qreuz_remove_tab_additional_information( $tabs ) {
+    unset( $tabs['additional_information'] );
     return $tabs;
 }
-add_filter( 'woocommerce_product_tabs', 'qreuz_rename_tabs_product_page', 98 );
+add_filter( 'woocommerce_product_tabs', 'qreuz_remove_tab_additional_information', 98 );
+```

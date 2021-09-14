@@ -1,3 +1,4 @@
+```php
 <?php
 
 /**
@@ -17,16 +18,21 @@
  * Don't know what a child theme is? Read this post: https://qreuz.com/how-to-use-a-child-theme-on-wordpress-and-woocommerce/
  *
  * COPY AND PASTE EVERYTHING BELOW THIS LINE TO YOUR FUNCTIONS.PHP **/
-
-
+ 
 /**
  * QREUZ SNIPPET FOR WOOCOMMERCE
- * @TITLE: Disable Facebook Pixel on Facebook for WooCommerce Plugin
- * @FOR_PLUGIN: Facebook for WooCommerce, https://woocommerce.com/products/facebook/
- * @DESCRIPTION: completely disables the Facebook Pixel on the Facebook for WooCommerce plugin
- * @DOCUMENTATION AND DISCUSSION: https://qreuz.com/snippets/disable-facebook-pixel-on-facebook-for-woocommerce-plugin/
+ * @TITLE: Customize WooCommerce Upsells Output
+ * @DESCRIPTION: modify output of upsell products on WooCommerce product pages
+ * @DOCUMENTATION AND DISCUSSION: https://qreuz.com/snippets/customize-woocommerce-upsells-output/
  * @AUTHOR: Qreuz GmbH
  * @VERSION: 1.0
- */		
-
-add_filter('facebook_for_woocommerce_integration_pixel_enabled', '__return_false', 20);
+ */
+ 
+add_filter( 'woocommerce_upsell_display_args', 'qreuz_modify_upsells_output', 20 );
+	
+	function qreuz_modify_upsells_output( $args ) {
+	 $args['posts_per_page'] = 4; // define how many upsell products shall be shown on the product pages
+	 $args['columns'] = 4; // define across how many columns the products shall be split
+	 return $args;
+	}
+```

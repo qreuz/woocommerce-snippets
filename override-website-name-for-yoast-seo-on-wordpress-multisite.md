@@ -1,3 +1,4 @@
+```php
 <?php
 
 /**
@@ -32,3 +33,4 @@ add_filter('wpseo_opengraph_site_name', 'qreuz_seo_site_name' );
 	function qreuz_seo_site_name(){
 		return 'YOUR_SITE_NAME'; // replace with your site's name
 	}
+```

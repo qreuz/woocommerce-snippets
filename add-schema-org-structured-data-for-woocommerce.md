@@ -1,3 +1,4 @@
+```php
 <?php
 
 /**
@@ -304,3 +305,4 @@ class qreuz_structured_data {
 		echo '</script>', PHP_EOL;
 	}
 }
+```

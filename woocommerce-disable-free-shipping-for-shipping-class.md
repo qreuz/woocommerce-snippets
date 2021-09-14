@@ -1,3 +1,4 @@
+```php
 <?
 /**
  *
@@ -56,3 +57,4 @@ function qreuz_force_shipping_when_class_in_cart( $rates, $package ) {
 	
 	return ! empty( $shipping_methods_disable ) ? $shipping_methods_disable : $rates;
 }
+```

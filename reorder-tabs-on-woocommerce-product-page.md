@@ -1,3 +1,4 @@
+```php
 <?php
 /**
  *
@@ -20,22 +21,25 @@
 /**
  * QREUZ SNIPPET FOR WOOCOMMERCE / WORDPRESS
  *
- * @TITLE       Remove Tabs from WooCommerce Product Page
+ * @TITLE       Reorder Tabs on WooCommerce Product Page
  * @VERSION     1.0
- * @DESCRIPTION Removes tabs from WooCommerce product pages
- * @LINK        https://qreuz.com/snippets/remove-tabs-from-woocommerce-product-page/
+ * @DESCRIPTION Reorders the tabs on WooCommerce product pages
+ * @LINK        https://qreuz.com/snippets/reorder-tabs-on-woocommerce-product-page/
  * @AUTHOR      Qreuz GmbH <hello@qreuz.com>
  * @LICENSE     GNU GPL v3 https://www.gnu.org/licenses/gpl-3.0
  */
 
 /**
- * This function will remove all tabs from WooCommerce product pages.
- * You can customize this snippet to select which tab to remove.
+ * This function will allow you to customize the order of the tabs on WooCommerce product pages.
+ * Change the priority values to change the order of the tabs.
+ * Lower number means higher position in the order.
 **/
-function qreuz_remove_tabs_product_page( $tabs ) {
-    unset( $tabs['additional_information'] ); // Removes the tab 'additional information'
-    unset( $tabs['description'] );      	// Remove the tab 'description'
-    unset( $tabs['reviews'] ); 			// Remove the tab 'reviews'
+function qreuz_reorder_tabs_product_page( $tabs ) {
+	$tabs['description']['priority'] = 5;
+    $tabs['additional_information']['priority'] = 10;
+    $tabs['reviews']['priority'] = 15;
+    
     return $tabs;
 }
-add_filter( 'woocommerce_product_tabs', 'qreuz_remove_tabs_product_page', 98 );
+add_filter( 'woocommerce_product_tabs', 'qreuz_reorder_tabs_product_page', 98 );
+```

@@ -1,3 +1,4 @@
+```php
 <?php
 /**
  *
@@ -104,3 +105,4 @@ function qreuz_google_customer_reviews_badge() {
 	wp_add_inline_script( 'qreuz_google_customer_reviews_badge_script', $qreuz_google_customer_reviews_badge_script );
 }
 add_action( 'wp_enqueue_scripts', 'qreuz_google_customer_reviews_badge', 20 );
+```

@@ -1,3 +1,4 @@
+```php
 <?php
 
 /**
@@ -20,16 +21,22 @@
 
 /**
  * QREUZ SNIPPET FOR WOOCOMMERCE
- * @TITLE: Increase WooCommerce AJAX Variation Treshold (Enable Conditional Variations)
- * @DESCRIPTION: increases the treshhold of variations to enable conditional display of variations if your product has many variations
- * @DOCUMENTATION AND DISCUSSION: https://qreuz.com/snippets/increase-woocommerce-ajax-variation-treshold-enable-conditional-variations/
+ * @TITLE: Hide WooCommerce Backend Login for Non-Admins
+ * @DESCRIPTION: hide the default Wordpress login page and prevent WooCommerce backend access for non-admins
+ * @DOCUMENTATION AND DISCUSSION: https://qreuz.com/snippets/hide-woocommerce-backend-login-for-non-admins/
  * @AUTHOR: Qreuz GmbH
  * @VERSION: 1.0
- */
- 
-add_filter( 'woocommerce_ajax_variation_threshold', 'qreuz_ajax_variation_treshold_modification', 10, 2 );
-	
-	function qreuz_ajax_variation_treshold_modification( $threshold, $product ){
-	  $threshold = '999';
-	  return  $threshold;
+ */	
+
+
+
+add_action( 'init', 'qreuz_hide_admin_pages' );
+
+	function qreuz_hide_admin_pages() {
+		if ( is_admin() && ! current_user_can( 'administrator' ) &&
+		! ( defined( 'DOING_AJAX' ) && DOING_AJAX ) ) {
+		wp_redirect( home_url() );
+		exit;
+		}
 	}
+```
